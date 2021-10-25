@@ -333,6 +333,75 @@ public class ChessProject extends JFrame implements MouseListener, MouseMotionLi
 				}
 			 }
 		 }
+		 else if(pieceName.contains("Bishop")){
+			 Boolean inThatWay = false;
+			 int distance = Math.abs(startx-landingX);
+			 if(((landingX<0)||(landingX>7)||((landingY<0)||landingY>7))){
+				 validMove = false;
+			 }
+			 else{
+				 validMove = true;
+				 if(Math.abs(startX-landingX)==Math.abs(startY-landingY)){
+					 if((startX-landingX <0)&&(startY-landingY<0)){
+						 for(int i=0; i<distance; i++){
+							 if(piecePresent((initialX+(i*75)), (initialY+(i*75)))){
+								 inTheWay = true;
+							 }
+						 }
+					 }
+					 else if((startX-landingX < 0)&&(startY-landingY > 0)){
+						 for( int i=0; i < distance; i++){
+							 if(piecePresent((initialX+(i*75)), (initialY-(i*75)))){
+								 inTheWay = true;
+							 }
+						 }
+					 }
+					 else if((startX-landingX > 0)&&(startY-landingY>0)){
+						 for(int i=0; i< distance; i++){
+							 if)piecePresent((initialX-(i*75)), (initialY+(i*75)))){
+								inTheWay = true;
+							 }
+						 }
+					 }
+					 else if((startX-landingX > 0)&&(startY-landingY<0)){
+						 for(int i=0; i<distance; i++){
+							 if(piecePresent((initialX-(i*75)), (initialY+(i*75)))){
+								 inTheWay = true;
+							 }
+						 }
+					 }
+					 if(inTheWay){
+						 validMove = false;
+					 }
+					 else{
+						 if{piecePresent((e.getX(), (e.getY()))){
+							 if(pieceName.contains("White")){
+								 if(checkWhiteOpponent(e.getX(), e.getY())){
+									 validMove = true;
+								 }
+								 else{
+									 validMove = false;
+								 }
+							 }
+							 else{
+								 if(checkBlackOpponent(e.getX(), e.getY())){
+									 validMove = true;
+								 }
+								 else{
+									 validMove = false;
+								 }
+							 }
+						 }
+						 else{
+							 validMove = true;
+							 }
+					 }
+				 }
+					 else{
+						 validMove = false;
+					 }
+			 }
+		 }
 		if(!validMove){
 			int location=0;
 			if(startY ==0){
