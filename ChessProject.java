@@ -4,8 +4,8 @@ import java.util.*;
 import javax.swing.*;
 
 /*
-	This class can be used as a starting point for creating your Chess game project. The only piece that 
-	has been coded is a white pawn...a lot done, more to do!
+	Tegan Jennings
+	X18303941
 */
 
 public class ChessProject extends JFrame implements MouseListener, MouseMotionListener {
@@ -18,10 +18,10 @@ public class ChessProject extends JFrame implements MouseListener, MouseMotionLi
 	int startY;
 	int initialX;
 	int initialY;
-	int landingY;
-	int landingX;
 	JPanel panels;
 	JLabel pieces;
+	int landingX = (e.getX() / 75);
+	int landingY = (e.getY() / 75);
 
 
 	public ChessProject(){
@@ -212,7 +212,7 @@ public class ChessProject extends JFrame implements MouseListener, MouseMotionLi
 			If a Pawn makes it to the top of the other side, the Pawn can turn into any other piece, for
 			demonstration purposes the Pawn here turns into a Queen.
 		*/
-		if (pieceName.equals("WhitePawn")) {
+		 if (pieceName.equals("WhitePawn")) {
 			if (startY == 1) {
 				if ((startX == (e.getX() / 75)) && ((((e.getY() / 75) - startY) == 1) || ((e.getY() / 75) - startY) == 2)) {
 					if ((((e.getY() / 75) - startY) == 2)) {
