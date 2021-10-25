@@ -394,14 +394,105 @@ public class ChessProject extends JFrame implements MouseListener, MouseMotionLi
 						 }
 						 else{
 							 validMove = true;
-							 }
+						 }
 					 }
 				 }
 					 else{
 						 validMove = false;
 					 }
+				 }
 			 }
 		 }
+		 else if(pieceName.contains("Rook")){
+			 Boolean inTheWay = false;
+			 if(((landingX<0)||(landingX>7))||((landingY<0)||(landingY>7))){
+				 validMove = false;
+			 }
+			 else{
+				 if(((Math.abs(startX-landingX)!=0)&&(Math.abs(startY-landingY)==0))||((Math.abs(startX-landingX)==0)&&(Math.abs(landingY-startY)!=0))){
+					 if(Math.abs(startX-landingX)!=0){
+						 int xMovement = Math.abs(startX-landingX);
+						 if(startX-landingX>0){
+							 for( int i=0; i < xMovement; i++){
+								 if(piecePresent(initialX-(i*75), e.getY())){
+									 inTheWay = true;
+									 break;
+								 }
+								 else{
+									 inTheWay = false;
+								 }
+							 }
+						 }
+						 else{
+							 for(int i=0; i< xMovement; i++){
+								 if(piecePresent(initialX+(i*75), e.getY())){
+									 inTheWay = true;
+									 break;
+								 }
+								 else{
+									 inTheWay = false;
+								 }
+							 }
+						 }
+					 }
+					 else{
+						 int yMovement = Math.abs(startY-landingY);
+						 if(startY-landingY>0){
+							 for(int i=0; i< yMovement; i++){
+								 if(piecePresent(e.getX(), initialY-(i*75))){
+									 inTheWay = true:
+									 break;
+								 }
+								 else{
+									 inTheWay = false;
+								 }
+							 }
+						 }
+						 else{
+							 for(int i=0; i < yMovement; i++){
+								 if(piecePresent(e.getX(), initialY+(i*75))){
+									 inTheWay = true;
+									 break;
+								 }
+								 else{
+									 inTheWay = false;
+								 }
+							 }
+						 }
+					 }
+					 if(inTheWay){
+						 validMove = false;
+					 }
+					 else{
+						 if(piecePresent(e.getX(), (e.getY()))){
+							 if(pieceName.contains("White")){
+								 if(checkWhiteOpponent(e.getX(), e.getY())){
+									 validMove = true;
+								 }
+								 else{
+									 validMove = false;
+								 }
+							 }
+							 else{
+								 if(checkBlackOpponent(e.getX(), e.getY())){
+									 validMove = true;
+								 }
+								 else{
+									 validMove = false;
+								 }
+							 }
+						 }
+						 else{
+							 validMove = true;
+						 }
+					 }
+				 }
+				 else{
+					 validMove = false;
+				 }
+			 }
+		 }
+
 		if(!validMove){
 			int location=0;
 			if(startY ==0){
