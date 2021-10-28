@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ab5b7bd6-9adc-4230-85c4-59e48ea1b454" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessProject/BlackBishup.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChessProject/BlackBishop.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessProject/ChessProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessProject/ChessProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChessProject/WhiteBishup.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChessProject/WhiteBishop.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessProject/BlackBishup.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessProject/ChessProject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessProject/ChessProject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessProject/WhiteBishup.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +26,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ChessProject" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\Desktop\College\Intro to AI\ChessProject\ChessProject" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
