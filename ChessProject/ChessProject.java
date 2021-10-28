@@ -1,6 +1,5 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
 import javax.swing.*;
 
 /*
@@ -66,10 +65,10 @@ public class ChessProject extends JFrame implements MouseListener, MouseMotionLi
 		pieces = new JLabel( new ImageIcon("WhiteKnight.png") );
 		panels = (JPanel)chessBoard.getComponent(6);
 		panels.add(pieces);
-		pieces = new JLabel( new ImageIcon("WhiteBishup.png") );
+		pieces = new JLabel( new ImageIcon("WhiteBishop.png") );
 		panels = (JPanel)chessBoard.getComponent(2);
 		panels.add(pieces);
-		pieces = new JLabel( new ImageIcon("WhiteBishup.png") );
+		pieces = new JLabel( new ImageIcon("WhiteBishop.png") );
 		panels = (JPanel)chessBoard.getComponent(5);
 		panels.add(pieces);
 		pieces = new JLabel( new ImageIcon("WhiteKing.png") );
@@ -95,10 +94,10 @@ public class ChessProject extends JFrame implements MouseListener, MouseMotionLi
 		pieces = new JLabel( new ImageIcon("BlackKnight.png") );
 		panels = (JPanel)chessBoard.getComponent(62);
 		panels.add(pieces);
-		pieces = new JLabel( new ImageIcon("BlackBishup.png") );
+		pieces = new JLabel( new ImageIcon("BlackBishop.png") );
 		panels = (JPanel)chessBoard.getComponent(58);
 		panels.add(pieces);
-		pieces = new JLabel( new ImageIcon("BlackBishup.png") );
+		pieces = new JLabel( new ImageIcon("BlackBishop.png") );
 		panels = (JPanel)chessBoard.getComponent(61);
 		panels.add(pieces);
 		pieces = new JLabel( new ImageIcon("BlackKing.png") );
@@ -133,6 +132,10 @@ public class ChessProject extends JFrame implements MouseListener, MouseMotionLi
 		String tmp1 = awaitingPiece.getIcon().toString();
 		if(((tmp1.contains("Black")))){
 			opponent = true;
+			if(tmp1.contains("King")){
+				JOptionPane.showMessageDialog(null,"Game Over, White Wins");
+				System.exit(0);
+			}
 		}
 		else{
 			opponent = false;
@@ -149,6 +152,10 @@ public class ChessProject extends JFrame implements MouseListener, MouseMotionLi
 		String tmp1 = awaitingPiece.getIcon().toString();
 		if(((tmp1.contains("White")))){
 			opponent = true;
+			if(tmp1.contains("King")) {
+				JOptionPane.showMessageDialog(null, "Game over, Black Wins!");
+				System.exit(0);
+			}
 		}
 		else{
 			opponent = false;
@@ -186,29 +193,21 @@ public class ChessProject extends JFrame implements MouseListener, MouseMotionLi
     //This method is used when the Mouse is released...we need to make sure the move was valid before putting the piece back on the board.
 	public void mouseReleased(MouseEvent e) {
 		if (chessPiece == null) return;
-		chessPiece.setVisible(true);
+		chessPiece.setVisible(false);
 		Boolean success = false;
 		Boolean progression = false;
 		Component c = chessBoard.findComponentAt(e.getX(), e.getY());
 		String tmp = chessPiece.getIcon().toString();
 		String pieceName = tmp.substring(0, (tmp.length() - 4));
 		Boolean validMove = false;
+		System.out.println(pieceName);
 
 		int landingX = (e.getX()/75);
 		int landingY = (e.getY()/75);
 		int xMovement = Math.abs((landingX-startX));
 		int yMovement = Math.abs((landingY-startY));
 
-//		if(whitePieceMoveFirst){
-//			if(pieceName.contains("White") && !(xMovement == 0 && yMovement == 0)){
-//				possible = true;
-//			}
-//		}
-//		else{
-//			if(pieceName.contains("Black") && !(xMovement == 0 && yMovement == 0)){
-//				possible = true;
-//			}
-//		}
+
 		/*//King Code
 		if(pieceName.contains("King")) {
 			Boolean inTheWay = false;
