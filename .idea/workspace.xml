@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ab5b7bd6-9adc-4230-85c4-59e48ea1b454" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChessProject/ChessProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChessProject/ChessProject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +27,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ChessProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -52,6 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635454029811</updated>
       <workItem from="1635454031362" duration="2169000" />
+      <workItem from="1635463382193" duration="1366000" />
     </task>
     <servers />
   </component>

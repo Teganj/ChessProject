@@ -207,6 +207,17 @@ public class ChessProject extends JFrame implements MouseListener, MouseMotionLi
 		int xMovement = Math.abs((landingX-startX));
 		int yMovement = Math.abs((landingY-startY));
 
+		if(whitePieceMoveFirst){
+			if(pieceName.contains("White") && !(xMovement == 0 && yMovement == 0)){
+				validMove = true;
+			}
+		}
+		else{
+			if(pieceName.contains("Black") && !(xMovement == 0 && yMovement == 0)){
+				validMove = true;
+			}
+		}
+
 
 		/*//King Code
 		if(pieceName.contains("King")) {
